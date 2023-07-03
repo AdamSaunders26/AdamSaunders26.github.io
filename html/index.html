@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="index.css">
     <script src="index.js" defer></script>
     <title>NoughtAndCrosses</title>
   </head>
@@ -11,33 +12,39 @@
     <body>
       <table>
         <tr>
-          <th>Player 1 = X</th>
-          <th>Player 2 = O</th>
+            <th class="scoreHead">X</th>
+            <th class="scoreHead">O</th>
+          </tr>
+        <tr>
+          <th>Player 1</th>
+          <th>Player 2</th>
         </tr>
         <tr>
-          <td id="1">0</td>
-          <td id="2">0</td>
+          <td id="1" class= "score">0</td>
+          <td id="2" class= "score">0</td>
         </tr>
       </table>
       <p id="turn">It is X's turn</p>
       <table>
         <tr>
-          <td><button onclick="XO.toggleButton(0)">1</button></td>
-          <td><button onclick="XO.toggleButton(1)">2</button></td>
-          <td><button onclick="XO.toggleButton(2)">3</button></td>
+          <td><button onclick="XO.toggleButton(0)">‎‎‎</button></td>
+          <td><button onclick="XO.toggleButton(1)">‎‎‎</button></td>
+          <td><button onclick="XO.toggleButton(2)">‎‎‎</button></td>
         </tr>
         <tr>
-          <td><button onclick="XO.toggleButton(3)">4</button></td>
-          <td><button onclick="XO.toggleButton(4)">5</button></td>
-          <td><button onclick="XO.toggleButton(5)">6</button></td>
+          <td><button onclick="XO.toggleButton(3)">‎‎‎</button></td>
+          <td><button onclick="XO.toggleButton(4)">‎‎‎</button></td>
+          <td><button onclick="XO.toggleButton(5)">‎‎‎</button></td>
         </tr>
         <tr>
-          <td><button onclick="XO.toggleButton(6)">7</button></td>
-          <td><button onclick="XO.toggleButton(7)">8</button></td>
-          <td><button onclick="XO.toggleButton(8)">9</button></td>
+          <td><button onclick="XO.toggleButton(6)">‎‎‎</button></td>
+          <td><button onclick="XO.toggleButton(7)">‎‎‎</button></td>
+          <td><button onclick="XO.toggleButton(8)">‎‎‎</button></td>
         </tr>
       </table>
-      <button onclick="XO.resetBoard()">Click to reset</button>
+      <p>
+      <button onclick="XO.resetBoard()" class="reset">Click to reset</button>
+      </p>
     </body>
   </body>
 </html>

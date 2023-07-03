@@ -1,0 +1,66 @@
+body, table,td {
+   font-family:'Courier New', Courier, monospace;
+    margin:auto;
+    margin-top:40px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 30px;
+    border:0px;
+     color:rgb(245, 200, 132);
+    background-color: rgb(151, 53, 53);
+}
+button {
+    width:100px;
+    height:100px;
+     text-align: center;
+    font-size:50px;
+}
+
+
+h1 {
+
+font-size:50px;
+text-align: center;
+}
+
+
+
+
+.reset {
+    margin-top:50px;
+font-size: 25px;    
+width:  200px;
+height: 50px;
+
+}
+
+p {
+
+     text-align: center;
+    margin:auto
+}
+
+
+
+th {
+     
+    border:0pc;
+
+    
+    margin-left: 10px;
+    margin-right: 10px;
+    padding:25px;
+    padding-top:5px;
+    padding-bottom: 5px;
+}
+
+.scoreHead {
+     
+     font-size:40px;
+    border:0;
+}
+
+.score {
+font-size:55px;
+color:antiquewhite;
+}
