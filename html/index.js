@@ -61,6 +61,7 @@ class Game {
         this.turn--;
         turnCounter.innerText = "It is X's turn.";
       }
+      button[index].className = "button1"
       this.winChecker();
     }
   }
@@ -75,6 +76,7 @@ class Game {
     button.forEach((item) => {
       if (item.innerText !== "Click to reset") {
         item.innerText = "‎‎‎";
+        item.classList.remove('button1')
       }
     });
     this.gameOver = false;
