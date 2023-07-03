@@ -20,44 +20,27 @@ class Game {
         this.tracker[0] === this.tracker[6]:
       case this.tracker[0] === this.tracker[4] &&
         this.tracker[0] === this.tracker[8]:
-        this.tracker[0] === 1 || this.tracker[0] === 2
-          ? this.score[this.tracker[0]]++
-          : null;
-        this.winner = this.tracker[0];
-        this.gameOver = true;
-        turnCounter.innerText = `Player ${this.winner} wins!`;
-        break;
+ 
       case this.tracker[2] === this.tracker[5] &&
         this.tracker[2] === this.tracker[8]:
       case this.tracker[2] === this.tracker[4] &&
         this.tracker[2] === this.tracker[6]:
-        this.winner = this.tracker[2];
-        this.tracker[2] === 1 || this.tracker[2] === 2
-          ? this.score[this.tracker[2]]++
-          : null;
-        this.winner = this.tracker[2];
-        this.gameOver = true;
-        turnCounter.innerText = `Player${this.winner} wins!`;
-        break;
+   
       case this.tracker[3] === this.tracker[4] &&
         this.tracker[3] === this.tracker[5]:
       case this.tracker[1] === this.tracker[4] &&
         this.tracker[1] === this.tracker[7]:
-        this.winner = this.tracker[4];
-        this.tracker[4] === 1 || this.tracker[4] === 2
-          ? this.score[this.tracker[4]]++
-          : null;
-        this.winner = this.tracker[4];
-        this.gameOver = true;
-        turnCounter.innerText = `Player${this.winner} wins!`;
-        break;
+       
       case this.tracker[6] === this.tracker[7] &&
         this.tracker[6] === this.tracker[8]:
-        this.winner = this.tracker[6];
-        this.tracker[6] === 1 || this.tracker[6] === 2
-          ? this.score[this.tracker[6]]++
-          : null;
-        this.winner = this.tracker[6];
+       
+      
+       
+          
+          
+        this.turn === 1 ? this.winner = 2 : this.winner = 1
+     
+        this.score[this.winner]++
         this.gameOver = true;
         turnCounter.innerText = `Player${this.winner} wins!`;
         break;
@@ -65,6 +48,7 @@ class Game {
   }
 
   toggleButton(index) {
+    console.log(this.turn)
     if (!this.gameOver) {
       if (this.turn === 1) {
         button[index].innerText = "X";
