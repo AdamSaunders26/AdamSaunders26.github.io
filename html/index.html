@@ -1,25 +1,43 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <script src="index.js" defer></script>
-<title>NoughtAndCrosses</title>
-</head>
+    <title>NoughtAndCrosses</title>
+  </head>
 
-<body>
+  <body>
+    <h1>A Game of Noughts And Crosses</h1>
 
-<h1>A Game of Noughts And Crosses </h1>
-
-<body>
-
-<table>
-<tr><td ><button onclick="toggleButton(0)">1</button></td> <td><button onclick="toggleButton(1)">2</button > </td><td><button onclick="toggleButton(2)">3</button ></td></tr>
-<tr><td><button onclick="toggleButton(3)">4</button></td> <td><button onclick="toggleButton(4)">5</button > </td><td><button onclick="toggleButton(5)">6</button ></td></tr>
-<tr><td><button onclick="toggleButton(6)">7</button></td><td><button onclick="toggleButton(7)">8</button ></td><td><button onclick="toggleButton(8)">9</button ></td></tr>
-</table>
-
-
-
-</body>
-
-</body>
+    <body>
+      <table>
+        <tr>
+          <th>Player 1 = X</th>
+          <th>Player 2 = O</th>
+        </tr>
+        <tr>
+          <td id="1">0</td>
+          <td id="2">0</td>
+        </tr>
+      </table>
+      <p id="turn">It is X's turn</p>
+      <table>
+        <tr>
+          <td><button onclick="XO.toggleButton(0)">1</button></td>
+          <td><button onclick="XO.toggleButton(1)">2</button></td>
+          <td><button onclick="XO.toggleButton(2)">3</button></td>
+        </tr>
+        <tr>
+          <td><button onclick="XO.toggleButton(3)">4</button></td>
+          <td><button onclick="XO.toggleButton(4)">5</button></td>
+          <td><button onclick="XO.toggleButton(5)">6</button></td>
+        </tr>
+        <tr>
+          <td><button onclick="XO.toggleButton(6)">7</button></td>
+          <td><button onclick="XO.toggleButton(7)">8</button></td>
+          <td><button onclick="XO.toggleButton(8)">9</button></td>
+        </tr>
+      </table>
+      <button onclick="XO.resetBoard()">Click to reset</button>
+    </body>
+  </body>
 </html>

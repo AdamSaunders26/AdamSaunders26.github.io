@@ -1,70 +1,104 @@
+const button = document.querySelectorAll("button");
+const xScore = document.getElementById("1");
+const oScore = document.getElementById("2");
+const turnCounter = document.getElementById("turn");
 
+class Game {
+  constructor() {
+    this.tracker = ["a", "s", "d", "f", "g", "h", "j", "k", "l"];
+    this.winner = null;
+    this.score = { 1: 0, 2: 0 };
+    this.gameOver = false;
+    this.turn = 1;
+  }
 
-const button = document.querySelectorAll('button')
+  winChecker() {
+    switch (true) {
+      case this.tracker[0] === this.tracker[1] &&
+        this.tracker[0] === this.tracker[2]:
+      case this.tracker[0] === this.tracker[3] &&
+        this.tracker[0] === this.tracker[6]:
+      case this.tracker[0] === this.tracker[4] &&
+        this.tracker[0] === this.tracker[8]:
+        this.tracker[0] === 1 || this.tracker[0] === 2
+          ? this.score[this.tracker[0]]++
+          : null;
+        this.winner = this.tracker[0];
+        this.gameOver = true;
+        turnCounter.innerText = `Player ${this.winner} wins!`;
+        break;
+      case this.tracker[2] === this.tracker[5] &&
+        this.tracker[2] === this.tracker[8]:
+      case this.tracker[2] === this.tracker[4] &&
+        this.tracker[2] === this.tracker[6]:
+        this.winner = this.tracker[2];
+        this.tracker[2] === 1 || this.tracker[2] === 2
+          ? this.score[this.tracker[2]]++
+          : null;
+        this.winner = this.tracker[2];
+        this.gameOver = true;
+        turnCounter.innerText = `Player${this.winner} wins!`;
+        break;
+      case this.tracker[3] === this.tracker[4] &&
+        this.tracker[3] === this.tracker[5]:
+      case this.tracker[1] === this.tracker[4] &&
+        this.tracker[1] === this.tracker[7]:
+        this.winner = this.tracker[4];
+        this.tracker[4] === 1 || this.tracker[4] === 2
+          ? this.score[this.tracker[4]]++
+          : null;
+        this.winner = this.tracker[4];
+        this.gameOver = true;
+        turnCounter.innerText = `Player${this.winner} wins!`;
+        break;
+      case this.tracker[6] === this.tracker[7] &&
+        this.tracker[6] === this.tracker[8]:
+        this.winner = this.tracker[6];
+        this.tracker[6] === 1 || this.tracker[6] === 2
+          ? this.score[this.tracker[6]]++
+          : null;
+        this.winner = this.tracker[6];
+        this.gameOver = true;
+        turnCounter.innerText = `Player${this.winner} wins!`;
+        break;
+    }
+  }
 
+  toggleButton(index) {
+    if (!this.gameOver) {
+      if (this.turn === 1) {
+        button[index].innerText = "X";
+        this.tracker[index] = 1;
+        this.turn++;
+        turnCounter.innerText = "It is O's turn.";
+      } else {
+        button[index].innerText = "O";
+        this.tracker[index] = 2;
+        this.turn--;
+        turnCounter.innerText = "It is X's turn.";
+      }
+      this.winChecker();
+    }
+  }
 
-const tracker = new Array(9);
-
-
-
-
-
-
-
-function toggleButton(index) 
-{
-console.dir(button)
-
-
-let text = button[index].innerText
-
-
-
-switch (text) {
-
-case 'X': button[index].innerText = 'O'
-tracker[index] = 2
-
- break
-case 'O': button[index].innerText = ' ‎   ‎   ‎    '
-tracker[index] = 0
-
-break
-
-default: button[index].innerText = 'X'
-tracker[index] = 1
-
-break
+  resetBoard() {
+    if (this.winner === 1) {
+      xScore.innerText = this.score[1];
+    } else {
+      oScore.innerText = this.score[2];
+    }
+    this.tracker = ["a", "s", "d", "f", "g", "h", "j", "k", "l"];
+    button.forEach((item) => {
+      if (item.innerText !== "Click to reset") {
+        item.innerText = "‎‎‎";
+      }
+    });
+    this.gameOver = false;
+    this.turn === 1
+      ? (turnCounter.innerText = "It is X's turn.")
+      : (turnCounter.innerText = "It is O's turn.");
+  }
 }
 
-
-
-let winCon = null;
-
-
-switch(true) {
-
-case tracker[0] === tracker[1] && tracker[0] === tracker[2]:
-case tracker[3] === tracker[4] && tracker[3] === tracker[5]:
-case tracker[6] === tracker[7] && tracker[6] === tracker[8]:
- 
-case tracker[0] === tracker[3] && tracker[0] === tracker[6]:
-case tracker[1] === tracker[4] && tracker[1] === tracker[7]:
-case tracker[2] === tracker[5] && tracker[2] === tracker[8]:   
-
-
-case tracker[2] === tracker[4] && tracker[2] === tracker[6]:
-case tracker[0] === tracker[4] && tracker[0] === tracker[8]:
-console.log('winner')
-
-
-}
-
-
-console.log(tracker)
-
-}
-
-
-
-
+const XO = new Game();
+console.log(XO);
